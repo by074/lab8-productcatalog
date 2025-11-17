@@ -49,8 +49,8 @@ import static org.hamcrest.CoreMatchers.anything;
 
             // Check that the text was changed.
             //onView(withId(R.id.listViewProducts))
-              //      .check(matches(withText(mStringToBetyped)));
-            onData(anything()).inAdapterView(withId(R.id.listViewProducts)).atPosition(0).onChildView(withId(R.id.textViewName)).check(matches(withText("Hello")));
+                    //.check(matches(withText(mStringToBetyped)));
+            onData(anything()).inAdapterView(withId(R.id.listViewProducts)).atPosition(0).onChildView(withId(R.id.textViewName)).check(matches(withText(mStringToBetyped)));
 
         }
     }
