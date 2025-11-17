@@ -1,0 +1,23 @@
+version: 2.1
+
+jobs:
+  build:
+    docker:
+      - image: cimg/android:2023.09
+    working_directory: ~/project
+    steps:
+      - checkout
+
+      - run:
+          name: Grant execute permission for gradlew
+          command: chmod +x ./gradlew
+
+      - run:
+          name: Run unit tests
+          command: ./gradlew test
+
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build
